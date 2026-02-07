@@ -1,20 +1,52 @@
+# Moodle Competency Plugins
+
+This repository contains two Moodle plugins designed to enhance competency-based assessment and reporting:
+
+- **qbank_yetkinlik**: Enables competency mapping within the question bank. Teachers can link questions to specific competencies for more structured evaluation.
+- **local_yetkinlik**: Provides competency analysis and reporting tools. Includes PDF export with multilingual support (EN/TR) and personalized motivational feedback for students.
+
+---
 
 ## Installation
-1. Copy each plugin into its respective Moodle directory:
-   - `qbank_yetkinlik` → `moodle/question/qbank/yetkinlik`
-   - `local_yetkinlik` → `moodle/local/yetkinlik`
-2. In Moodle, go to **Site administration → Plugins → Install plugins**.
-3. Complete the installation wizard.
-4. Purge caches.
 
-## Usage
-- Use **qbank_yetkinlik** to assign competencies to questions in the question bank.
-- Use **local_yetkinlik** to generate analysis, reports, and feedback based on those assignments.
+1. Ensure your Moodle version is **5.0 or higher**.
+2. Copy the `qbank_yetkinlik` folder into `question/bank/`.
+3. Copy the `local_yetkinlik` folder into `local/`.
+4. Log in as an administrator and complete the plugin installation process.
+5. Verify that both plugins are enabled in the Moodle admin panel.
 
-## Development
-- Source JS files are located in `amd/src`.
-- After changes, run `grunt amd` to regenerate `amd/build` files.
-- Language files are located in `lang/en` and `lang/tr`.
+---
+
+## Features
+
+- Competency mapping for questions.
+- Competency-based reporting and analysis.
+- PDF export with multilingual support (English/Turkish).
+- Motivational feedback generation for learners.
+- Clean architecture with redundant endpoints removed.
+- Fully localized language files (EN/TR).
+
+---
+
+## Requirements
+
+- Moodle **5.0+**
+- PHP and SQL database support (standard Moodle requirements).
+
+---
 
 ## License
-This repository is distributed under the GNU GPL v3 license.
+
+This project is licensed under the **GNU GPL v3**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contributing
+
+Contributions, bug reports, and feature requests are welcome. Please open an issue or submit a pull request.
+
+---
+
+## Releases
+
+See the [Releases](https://github.com/hakancigci/moodle_yetkinlik_plugins/releases) section for detailed changelogs and downloadable packages.
