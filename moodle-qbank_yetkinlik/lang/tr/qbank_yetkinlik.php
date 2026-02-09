@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  See the LICENSE file in the root directory of this source tree.
 
 /**
  * Turkish strings for qbank_yetkinlik plugin.
@@ -24,14 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// Eklenti isimleri.
+$string['competency'] = 'Yetkinlik / Kazanım';
+$string['none'] = 'Yok';
 $string['pluginname'] = 'Soru Bankası Yetkinlik Eşleştirme';
 $string['privacy:metadata'] = 'Soru Bankası Yetkinlik eklentisi herhangi bir kişisel veri depolamaz; sadece sorular ile yetkinlikler arasındaki eşleştirmeleri saklar.';
-
-// Sütun başlıkları.
-$string['competency'] = 'Yetkinlik / Kazanım';
-$string['yetkinlik'] = 'Yetkinlik';
-
-// Genel dizgiler.
-$string['none'] = 'Yok';
 $string['selectcompetency'] = 'Yetkinlik seçiniz...';
+$string['yetkinlik'] = 'Yetkinlik';
