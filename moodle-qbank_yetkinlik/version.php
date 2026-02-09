@@ -33,5 +33,5 @@ $plugin->release   = '1.1';                   // İnsan tarafından okunabilir s
 
 // Bu eklentinin çalışması için local_yetkinlik eklentisi şarttır.
 $plugin->dependencies = [
-    'local_yetkinlik' => 2026020900
+    'local_yetkinlik' => 2026020900,
 ];
