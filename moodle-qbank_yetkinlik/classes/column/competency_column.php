@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  See the LICENSE file in the root directory of this source tree.
 
 /**
  * Competency column for Question Bank.
@@ -28,38 +28,26 @@ use core_question\local\bank\column_base;
 use html_writer;
 use stdClass;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
- * Competency column for Question Bank
+ * Competency column for Question Bank.
  *
  * @package    qbank_yetkinlik
  * @author     Hakan Çiğci
  */
 class competency_column extends column_base {
 
-    /** @var array $competencies Store available competencies for the course. */
-    protected $competencies = null;
+    /** @var array $competency_options Store available competencies for the course. */
+    protected $competency_options = null;
 
-    /**
-     * Initialize the column.
-     
-    public function init(): void {
-        parent::init();
-        // JavaScript modülünü yüklüyoruz (local_yetkinlik içindeki mapping.js).
-        $this->qbank->get_page()->requires->js_call_amd('local_yetkinlik/mapping', 'init');
-    }
-*/
     /**
      * Initialize the column.
      */
     public function init(): void {
         parent::init();
-        
-        // get_page() hatasını önlemek için global $PAGE nesnesini kullanıyoruz.
         global $PAGE;
         $PAGE->requires->js_call_amd('local_yetkinlik/mapping', 'init');
     }
+
     /**
      * Column internal name.
      *
@@ -85,10 +73,9 @@ class competency_column extends column_base {
      * @param string $rowclasses CSS classes for the row.
      * @return void
      */
-   protected function display_content($question, $rowclasses): void {
+    protected function display_content($question, $rowclasses): void {
         global $DB, $PAGE;
 
-        // Kurs ID'sini senin çalışan yönteminle alıyoruz.
         $courseid = $this->qbank->id ?? $this->qbank->course->id ?? $PAGE->course->id;
         $questionid = $question->id;
 
@@ -103,36 +90,33 @@ class competency_column extends column_base {
         }
 
         if (!$this->competency_options) {
-            echo \html_writer::tag('span', '-', ['class' => 'text-muted']);
+            echo html_writer::tag('span', '-', ['class' => 'text-muted']);
             return;
         }
 
         $current = $DB->get_field('local_yetkinlik_qmap', 'competencyid', [
             'courseid'   => $courseid,
-            'questionid' => $questionid
+            'questionid' => $questionid,
         ]);
 
-        // Autocomplete için gerekli element ID'si
         $elementid = 'competency_' . $questionid;
         $options = [0 => '—'] + $this->competency_options;
 
-        // 1. Standart Select kutusunu basıyoruz
-        echo \html_writer::select($options, $elementid, $current, false, [
+        echo html_writer::select($options, $elementid, $current, false, [
             'id'              => $elementid,
             'class'           => 'yetkinlik-select custom-select',
             'data-questionid' => $questionid,
-            'data-courseid'   => $courseid
+            'data-courseid'   => $courseid,
         ]);
 
-        // 2. Moodle Autocomplete modülünü bu element için çalıştırıyoruz
         $PAGE->requires->js_call_amd('core/form-autocomplete', 'enhance', [
-            '#' . $elementid, // Element seçici
-            false,           // Çoklu seçim (tags) kapalı
-            '',              // AJAX url (boş çünkü veriler hazır)
-            get_string('search'), // Placeholder
-            false,           // Case sensitive kapalı
-            true,            // Listeyi her zaman göster
-            get_string('noresults', 'moodle') // Sonuç yoksa mesajı
+            '#' . $elementid,
+            false,
+            '',
+            get_string('search'),
+            false,
+            true,
+            get_string('noresults', 'moodle'),
         ]);
     }
 
