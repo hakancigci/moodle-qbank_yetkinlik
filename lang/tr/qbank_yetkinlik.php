@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  See the LICENSE file in the root directory of this source tree.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Turkish strings for qbank_yetkinlik plugin.
