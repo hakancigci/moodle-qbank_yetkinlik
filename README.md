@@ -14,7 +14,7 @@ A Moodle **Question Bank Competency** plugin. This plugin links questions in the
 4. Purge caches.
 
 ## Usage
--Assign competencies to questions in the question bank.
+- Assign competencies to questions in the question bank.
 - This plugin only handles linking. For reporting and analysis, use the `local_yetkinlik` plugin.
 
 ## Development
