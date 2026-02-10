@@ -28,8 +28,6 @@ use core_question\local\bank\plugin_features_base;
 use core_question\local\bank\view;
 use qbank_yetkinlik\column\competency_column;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Class plugin_feature
  *
@@ -40,7 +38,6 @@ defined('MOODLE_INTERNAL') || die();
  * @author     Hakan Çiğci
  */
 class plugin_feature extends plugin_features_base {
-
     /**
      * Define the columns provided by this plugin to the question bank.
      *
@@ -49,7 +46,7 @@ class plugin_feature extends plugin_features_base {
      */
     public function get_question_columns(view $qbank): array {
         return [
-            new competency_column($qbank)
+            new competency_column($qbank),
         ];
     }
 }
