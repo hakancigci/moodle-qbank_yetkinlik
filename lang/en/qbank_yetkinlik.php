@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * English strings for qbank_yetkinlik plugin.
@@ -24,14 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// Plugin name strings.
+$string['competency'] = 'Competency';
+$string['none'] = 'None';
 $string['pluginname'] = 'Question Bank Competency Mapping';
 $string['privacy:metadata'] = 'The Question Bank Competency Mapping plugin does not store any personal data; it only maps questions to competencies.';
-
-// Column headers.
-$string['competency'] = 'Competency';
-$string['yetkinlik'] = 'Competency'; // Sütun internal name (get_name) ile uyum için.
-
-// General strings.
-$string['none'] = 'None';
 $string['selectcompetency'] = 'Select competency...';
+$string['yetkinlik'] = 'Competency';
