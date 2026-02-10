@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Version details for the qbank_yetkinlik plugin.
@@ -28,8 +28,8 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'qbank_yetkinlik';       // Eklentinin tam adı.
 $plugin->version   = 2026020970;              // Versiyon numarası (YYYYMMDDXX).
 $plugin->requires  = 2025041400;              // Moodle 5.0 ve üzeri desteği.
-$plugin->maturity  = MATURITY_STABLE;         // Kararlı sürüm.
-$plugin->release   = '1.1.2';                   // İnsan tarafından okunabilir sürüm.
+$plugin->maturity  = MATURITY_STABLE;          // Kararlı sürüm.
+$plugin->release   = '1.1.2';                 // İnsan tarafından okunabilir sürüm.
 
 // Bu eklentinin çalışması için local_yetkinlik eklentisi şarttır.
 $plugin->dependencies = [
