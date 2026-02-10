@@ -35,8 +35,8 @@ use stdClass;
  * @author     Hakan Çiğci
  */
 class competency_column extends column_base {
-    /** @var array $competencyOptions Store available competencies for the course. */
-    protected $competencyOptions = null;
+    /** @var array $competency_options Store available competencies for the course. */
+    protected $competency_options = null;
 
     /**
      * Initialize the column.
@@ -78,8 +78,8 @@ class competency_column extends column_base {
         $courseid = $this->qbank->id ?? $this->qbank->course->id ?? $PAGE->course->id;
         $questionid = $question->id;
 
-        if ($this->competencyOptions === null) {
-            $this->competencyOptions = $DB->get_records_sql_menu("
+        if ($this->competency_options === null) {
+            $this->competency_options = $DB->get_records_sql_menu("
                 SELECT c.id, c.shortname
                   FROM {competency} c
                   JOIN {competency_coursecomp} cc ON cc.competencyid = c.id
@@ -88,7 +88,7 @@ class competency_column extends column_base {
             ", [$courseid]);
         }
 
-        if (!$this->competencyOptions) {
+        if (!$this->competency_options) {
             echo html_writer::tag('span', '-', ['class' => 'text-muted']);
             return;
         }
@@ -99,7 +99,7 @@ class competency_column extends column_base {
         ]);
 
         $elementid = 'competency_' . $questionid;
-        $options = [0 => '—'] + $this->competencyOptions;
+        $options = [0 => '—'] + $this->competency_options;
 
         echo html_writer::select($options, $elementid, $current, false, [
             'id'              => $elementid,
