@@ -26,12 +26,12 @@ defined('MOODLE_INTERNAL') || die();
 
 /** @var stdClass $plugin */
 $plugin->component = 'qbank_yetkinlik';       // Eklentinin tam adı.
-$plugin->version   = 2026020993;              // Versiyon numarası (YYYYMMDDXX).
+$plugin->version   = 2026020994;              // Versiyon numarası (YYYYMMDDXX).
 $plugin->requires  = 2025041400;              // Moodle 5.0 ve üzeri desteği.
 $plugin->maturity  = MATURITY_STABLE;          // Kararlı sürüm.
-$plugin->release   = '1.1.8';                 // Insan tarafından okunabilir sürüm.
+$plugin->release   = '2.0.0';                 // Insan tarafından okunabilir sürüm.
 
 // Bu eklentinin çalışması için local_yetkinlik eklentisi şarttır.
 $plugin->dependencies = [
-    'local_yetkinlik' => 2026020993,
+    'local_yetkinlik' => 2026020994,
 ];
