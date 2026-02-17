@@ -24,13 +24,9 @@
 
 namespace qbank_yetkinlik\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 use core_privacy\local\metadata\collection;
 use core_privacy\local\request\approved_contextlist;
-use core_privacy\local\request\approved_userlist;
 use core_privacy\local\request\contextlist;
-use core_privacy\local\request\userlist;
 
 /**
  * qbank_yetkinlik eklentisi için Gizlilik Sağlayıcısı.
@@ -46,13 +42,13 @@ class provider implements
      * @return collection Dönüştürülmüş koleksiyon.
      */
     public static function get_metadata(collection $items): collection {
-        // Eğer veritabanında kullanıcı tabanlı yetkinlik eşleşmeleri saklıyorsanız buraya ekleyin
+        // Eğer veritabanında kullanıcı tabanlı yetkinlik eşleşmeleri saklıyorsanız buraya ekleyin.
         $items->add_database_table(
-            'qbank_yetkinlik_table_name', // Gerçek tablo adınızı yazın
+            'qbank_yetkinlik_table_name',
             [
                 'userid' => 'privacy:metadata:userid',
                 'competencyid' => 'privacy:metadata:competencyid',
-                'timecreated' => 'privacy:metadata:timecreated'
+                'timecreated' => 'privacy:metadata:timecreated',
             ],
             'privacy:metadata:description'
         );
@@ -69,12 +65,12 @@ class provider implements
     public static function get_contexts_for_userid(int $userid): contextlist {
         $contextlist = new contextlist();
 
-        // Örnek: Kullanıcının kendi yetkinliklerini tanımladığı sistem veya kurs bağlamlarını ekleyin
+        // Kullanıcının kendi yetkinliklerini tanımladığı sistem veya kurs bağlamlarını ekleyin.
         $sql = "SELECT c.id
                   FROM {context} c
                   JOIN {qbank_yetkinlik_table_name} t ON t.contextid = c.id
                  WHERE t.userid = :userid";
-        
+
         $contextlist->add_from_sql($sql, ['userid' => $userid]);
 
         return $contextlist;
@@ -86,7 +82,7 @@ class provider implements
      * @param approved_contextlist $contextlist Onaylanmış bağlam listesi.
      */
     public static function export_user_data(approved_contextlist $contextlist) {
-        // Veri dışa aktarma mantığı buraya gelir
+        // Veri dışa aktarma mantığı buraya gelir.
     }
 
     /**
@@ -95,7 +91,7 @@ class provider implements
      * @param \core_privacy\local\request\context $context Silinecek bağlam.
      */
     public static function delete_data_for_all_users_in_context(\core_privacy\local\request\context $context) {
-        // Silme mantığı
+        // Silme mantığı burada çalışır.
     }
 
     /**
@@ -104,6 +100,6 @@ class provider implements
      * @param approved_contextlist $contextlist Silinecek kullanıcı ve bağlam listesi.
      */
     public static function delete_data_for_user(approved_contextlist $contextlist) {
-        // Belirli kullanıcı verilerini silme mantığı
+        // Belirli kullanıcı verilerini silme mantığı burada çalışır.
     }
 }
