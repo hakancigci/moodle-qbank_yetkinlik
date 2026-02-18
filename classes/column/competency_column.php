@@ -46,7 +46,7 @@ class competency_column extends column_base {
     public function init(): void {
         parent::init();
         global $PAGE;
-        $PAGE->requires->js_call_amd('local_yetkinlik/mapping', 'init');
+        $PAGE->requires->js_call_amd('qbank_yetkinlik/mapping', 'init');
     }
 
     /**
