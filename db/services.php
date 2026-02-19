@@ -15,7 +15,7 @@
  * Web service function definitions for qbank_yetkinlik.
  *
  * @package    qbank_yetkinlik
- * @copyright  2026 Hakan ÇİĞCİ <hakancigci.com.tr>
+ * @copyright  2026 Hakan Çiğci {@link https://hakancigci.com.tr}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,3 +30,4 @@ $functions = [
         'ajax'        => true,
     ],
 ];
+
