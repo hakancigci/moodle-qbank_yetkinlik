@@ -46,9 +46,9 @@ class save_question_competency extends external_api {
      */
     public static function execute_parameters() {
         return new external_function_parameters([
-            'questionid'   => new external_value(PARAM_INT, 'Soru ID'),
-            'competencyid' => new external_value(PARAM_INT, 'Yetkinlik ID'),
-            'courseid'     => new external_value(PARAM_INT, 'Kurs ID'),
+            'questionid'   => new external_value(PARAM_INT, 'The ID of the question'),
+            'competencyid' => new external_value(PARAM_INT, 'The ID of the competency'),
+            'courseid'     => new external_value(PARAM_INT, 'The ID of the course'),
         ]);
     }
 
@@ -109,6 +109,6 @@ class save_question_competency extends external_api {
      * @return external_value
      */
     public static function execute_returns() {
-        return new external_value(PARAM_BOOL, 'Başarı durumu');
+        return new external_value(PARAM_BOOL, 'Success status');
     }
 }
