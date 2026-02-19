@@ -13,12 +13,14 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
-//
-// External API class for saving question competency mapping.
-//
-// @package    qbank_yetkinlik
-// @copyright  2026 Hakan Çiğci {@link https://hakancigci.com.tr}
-// @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+
+/**
+ * External API class for saving question competency mapping.
+ *
+ * @package    local_yetkinlik
+ * @copyright  2026 Hakan Çiğci {@link https://hakancigci.com.tr}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 namespace qbank_yetkinlik\external;
 
@@ -110,3 +112,4 @@ class save_question_competency extends external_api {
         return new external_value(PARAM_BOOL, 'Başarı durumu');
     }
 }
+
