@@ -33,7 +33,7 @@ use core_external\external_value;
  * External service class for saving question competencies.
  *
  * @package    qbank_yetkinlik
- * @copyright  2026 Your Name <your.email@example.com>
+ * @copyright  2026 Hakan Çiğci {@link https://hakancigci.com.tr}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class save_question_competency extends external_api {
@@ -111,4 +111,3 @@ class save_question_competency extends external_api {
         return new external_value(PARAM_BOOL, 'Başarı durumu');
     }
 }
-
