@@ -95,7 +95,7 @@ class competency_column extends column_base {
             return;
         }
 
-        $current = $DB->get_field('local_yetkinlik_qmap', 'competencyid', [
+        $current = $DB->get_field('qbank_yetkinlik_qmap', 'competencyid', [
             'courseid'   => $courseid,
             'questionid' => $questionid,
         ]);
