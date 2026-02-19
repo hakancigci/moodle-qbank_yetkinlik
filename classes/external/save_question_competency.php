@@ -24,8 +24,6 @@
 
 namespace qbank_yetkinlik\external;
 
-defined('MOODLE_INTERNAL') || die();
-
 use stdClass;
 use context_course;
 use core_external\external_api;
