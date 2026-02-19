@@ -17,7 +17,7 @@
 /**
  * External API class for saving question competency mapping.
  *
- * @package    local_yetkinlik
+ * @package    qbank_yetkinlik
  * @copyright  2026 Hakan Çiğci {@link https://hakancigci.com.tr}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -112,4 +112,5 @@ class save_question_competency extends external_api {
         return new external_value(PARAM_BOOL, 'Başarı durumu');
     }
 }
+
 
