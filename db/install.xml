@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="local/yetkinlik/db" VERSION="2026031200" COMMENT="XMLDB file for local_yetkinlik plugin">
+<XMLDB PATH="question/bank/yetkinlik/db" VERSION="2026031200" COMMENT="XMLDB file for local_yetkinlik plugin">
     <TABLES>
         <TABLE NAME="local_yetkinlik_qmap" COMMENT="Table for mapping questions to specific competencies">
             <FIELDS>
@@ -20,3 +20,4 @@
         </TABLE>
     </TABLES>
 </XMLDB>
+
