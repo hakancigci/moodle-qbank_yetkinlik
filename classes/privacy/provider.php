@@ -29,20 +29,23 @@ use core_privacy\local\request\approved_contextlist;
 use core_privacy\local\request\contextlist;
 
 /**
- * qbank_yetkinlik eklentisi için Gizlilik Sağlayıcısı.
+ * Privacy Provider for qbank_yetkinlik plugin.
+ *
+ * @package    qbank_yetkinlik
+ * @copyright  2026 Hakan Çiğci
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider implements
     \core_privacy\local\metadata\provider,
     \core_privacy\local\request\plugin\provider {
 
     /**
-     * Eklenti tarafından saklanan verilerin tanımlanması.
+     * Returns meta data about this system.
      *
-     * @param collection $items Veri koleksiyonu.
-     * @return collection Dönüştürülmüş koleksiyon.
+     * @param collection $items The set of items to be added to.
+     * @return collection The updated set of items.
      */
     public static function get_metadata(collection $items): collection {
-        // Eğer veritabanında kullanıcı tabanlı yetkinlik eşleşmeleri saklıyorsanız buraya ekleyin.
         $items->add_database_table(
             'qbank_yetkinlik_table_name',
             [
@@ -57,15 +60,14 @@ class provider implements
     }
 
     /**
-     * Belirli bir kullanıcıyla ilgili tüm bağlamları (contexts) getirir.
+     * Get the list of contexts that contain user information for the specified user.
      *
-     * @param int $userid Sorgulanan kullanıcı ID.
-     * @return contextlist Kullanıcının verisinin bulunduğu bağlam listesi.
+     * @param int $userid The user to search.
+     * @return contextlist The contextlist containing the list of contexts used by this user.
      */
     public static function get_contexts_for_userid(int $userid): contextlist {
         $contextlist = new contextlist();
 
-        // Kullanıcının kendi yetkinliklerini tanımladığı sistem veya kurs bağlamlarını ekleyin.
         $sql = "SELECT c.id
                   FROM {context} c
                   JOIN {qbank_yetkinlik_table_name} t ON t.contextid = c.id
@@ -77,29 +79,29 @@ class provider implements
     }
 
     /**
-     * Kullanıcı verilerini dışa aktarır.
+     * Export all user data for the specified number of contexts.
      *
-     * @param approved_contextlist $contextlist Onaylanmış bağlam listesi.
+     * @param approved_contextlist $contextlist The approved contexts to export information for.
      */
     public static function export_user_data(approved_contextlist $contextlist) {
-        // Veri dışa aktarma mantığı buraya gelir.
+        // Implementation for exporting user data follows here.
     }
 
     /**
-     * Bir bağlamdaki tüm kullanıcı verilerini siler.
+     * Delete all data for all users in the specified context.
      *
-     * @param \core_privacy\local\request\context $context Silinecek bağlam.
+     * @param \core_privacy\local\request\context $context The specific context to delete data for.
      */
     public static function delete_data_for_all_users_in_context(\core_privacy\local\request\context $context) {
-        // Silme mantığı burada çalışır.
+        // Implementation for deleting data for all users in context follows here.
     }
 
     /**
-     * Onaylanmış listedeki kullanıcı verilerini siler.
+     * Delete all user data for the specified user, in the specified contexts.
      *
-     * @param approved_contextlist $contextlist Silinecek kullanıcı ve bağlam listesi.
+     * @param approved_contextlist $contextlist The approved contexts and user information to delete information for.
      */
     public static function delete_data_for_user(approved_contextlist $contextlist) {
-        // Belirli kullanıcı verilerini silme mantığı burada çalışır.
+        // Implementation for deleting specific user data follows here.
     }
 }
