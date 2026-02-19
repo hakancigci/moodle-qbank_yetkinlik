@@ -10,9 +10,6 @@
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * External API class for saving question competency mapping.
@@ -23,6 +20,8 @@
  */
 
 namespace qbank_yetkinlik\external;
+
+defined('MOODLE_INTERNAL') || die();
 
 use stdClass;
 use context_course;
@@ -112,5 +111,3 @@ class save_question_competency extends external_api {
         return new external_value(PARAM_BOOL, 'Başarı durumu');
     }
 }
-
-
