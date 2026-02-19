@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <XMLDB PATH="question/bank/yetkinlik/db" VERSION="2026031200" COMMENT="XMLDB file for local_yetkinlik plugin">
     <TABLES>
-        <TABLE NAME="local_yetkinlik_qmap" COMMENT="Table for mapping questions to specific competencies">
+        <TABLE NAME="qbank_yetkinlik_qmap" COMMENT="Table for mapping questions to specific competencies">
             <FIELDS>
                 <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
                 <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" COMMENT="The ID of the course where the mapping belongs"/>
@@ -20,4 +20,5 @@
         </TABLE>
     </TABLES>
 </XMLDB>
+
 
