@@ -75,7 +75,7 @@ class save_question_competency extends external_api {
         self::validate_context($context);
         require_capability('moodle/course:manageactivities', $context);
 
-        $table = 'local_yetkinlik_qmap';
+        $table = 'qbank_yetkinlik_qmap';
         $conditions = [
             'questionid' => $params['questionid'],
             'courseid'   => $params['courseid'],
