@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 /** @var stdClass $plugin */
-$plugin->component = 'qbank_yetkinlik';       // Eklentinin tam adı.
-$plugin->version   = 2026031200;              // Versiyon numarası (YYYYMMDDXX).
-$plugin->requires  = 2025041400;              // Moodle 5.0 ve üzeri desteği.
-$plugin->maturity  = MATURITY_STABLE;          // Kararlı sürüm.
-$plugin->release   = '2.0.2';                 // Insan tarafından okunabilir sürüm.
+$plugin->component = 'qbank_yetkinlik';    // Full name of the plugin (category_name).
+$plugin->version   = 2026031200;           // The current module version (YYYYMMDDXX).
+$plugin->requires  = 2025041400;           // Requires Moodle 5.0 or later.
+$plugin->maturity  = MATURITY_STABLE;       // Maturity level of the plugin.
+$plugin->release   = '2.0.2';              // Human-readable version name.
