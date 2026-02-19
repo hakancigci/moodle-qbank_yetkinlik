@@ -13,11 +13,11 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
- 
+
 /**
  * Web service function definitions for qbank_yetkinlik.
  *
- * @package    local_yetkinlik
+ * @package    qbank_yetkinlik
  * @copyright  2026 Hakan Çiğci {@link https://hakancigci.com.tr}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,4 +33,5 @@ $functions = [
         'ajax'        => true,
     ],
 ];
+
 
