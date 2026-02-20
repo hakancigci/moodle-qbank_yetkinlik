@@ -27,7 +27,7 @@ import Notification from 'core/notification';
 export const init = () => {
     const selects = document.querySelectorAll('.yetkinlik-select');
     selects.forEach(select => {
-        select.addEventListener('change', async (e) =>{
+        select.addEventListener('change', async(e) => {
             const target = e.target;
             try {
                 await Ajax.call([{
