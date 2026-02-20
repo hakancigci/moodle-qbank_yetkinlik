@@ -38,7 +38,6 @@ use core_privacy\local\request\contextlist;
 class provider implements
     \core_privacy\local\metadata\provider,
     \core_privacy\local\request\plugin\provider {
-
     /**
      * Returns meta data about this system.
      *
