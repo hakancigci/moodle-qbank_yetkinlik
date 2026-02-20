@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 /** @var stdClass $plugin */
 $plugin->component = 'qbank_yetkinlik';    // Full name of the plugin (category_name).
-$plugin->version   = 2026031210;           // The current module version (YYYYMMDDXX).
+$plugin->version   = 2026031220;           // The current module version (YYYYMMDDXX).
 $plugin->requires  = 2025041400;           // Requires Moodle 5.0 or later.
 $plugin->maturity  = MATURITY_STABLE;       // Maturity level of the plugin.
-$plugin->release   = '2.0.3';              // Human-readable version name.
+$plugin->release   = '2.0.4';              // Human-readable version name.
