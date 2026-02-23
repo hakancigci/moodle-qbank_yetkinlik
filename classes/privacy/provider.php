@@ -27,6 +27,7 @@ namespace qbank_yetkinlik\privacy;
 use core_privacy\local\metadata\collection;
 use core_privacy\local\request\approved_contextlist;
 use core_privacy\local\request\contextlist;
+use core_privacy\local\request\context;
 
 /**
  * Privacy Provider for qbank_yetkinlik plugin.
@@ -38,6 +39,7 @@ use core_privacy\local\request\contextlist;
 class provider implements
     \core_privacy\local\metadata\provider,
     \core_privacy\local\request\plugin\provider {
+
     /**
      * Returns meta data about this system.
      *
@@ -46,7 +48,7 @@ class provider implements
      */
     public static function get_metadata(collection $items): collection {
         $items->add_database_table(
-            'qbank_yetkinlik_table_name',
+            'qbank_yetkinlik_qmap',
             [
                 'userid' => 'privacy:metadata:userid',
                 'competencyid' => 'privacy:metadata:competencyid',
@@ -69,7 +71,7 @@ class provider implements
 
         $sql = "SELECT c.id
                   FROM {context} c
-                  JOIN {qbank_yetkinlik_table_name} t ON t.contextid = c.id
+                  JOIN {qbank_yetkinlik_qmap} t ON t.contextid = c.id
                  WHERE t.userid = :userid";
 
         $contextlist->add_from_sql($sql, ['userid' => $userid]);
@@ -89,16 +91,16 @@ class provider implements
     /**
      * Delete all data for all users in the specified context.
      *
-     * @param \core_privacy\local\request\context $context The specific context to delete data for.
+     * @param context $context The specific context to delete data for.
      */
-    public static function delete_data_for_all_users_in_context(\core_privacy\local\request\context $context) {
+    public static function delete_data_for_all_users_in_context(context $context) {
         // Implementation for deleting data for all users in context follows here.
     }
 
     /**
      * Delete all user data for the specified user, in the specified contexts.
      *
-     * @param approved_contextlist $contextlist The approved contexts and user information to delete information for.
+     * @param approved_contextlist $contextlist The approved contexts and user information to delete.
      */
     public static function delete_data_for_user(approved_contextlist $contextlist) {
         // Implementation for deleting specific user data follows here.
